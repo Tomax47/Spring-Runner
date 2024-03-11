@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layout}">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title>Clubs</title>
+    <!-- Favicon-->
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+    <!-- Core theme CSS (includes Bootstrap)-->
+    <link href="css/styles.css" rel="stylesheet" />
+</head>
+<section>
+<!-- Page Content-->
+<div layout:fragment="body" class="container px-4 px-lg-5">
+<!-- Content Row-->
+    <div class="row gx-4 gx-lg-5">
+        <div th:each="club :${clubs}" class="col-md-4 mb-5">
+            <div class="card h-100">
+                <div class="card-body">
+                    <img class="img-fluid rounded-3 mb-3" th:src="${club.getPhotoUrl()}" alt="...">
+                    <h3 th:text="${club.getTitle()}" class="card-title"></h3>
+                    <p th:text="${club.getContent()}" class="card-text"></p>
+                </div>
+                <div class="card-footer"><a class="btn btn-primary btn-sm" th:href="@{/clubs/{clubId}/view(clubId=${club.getId()})}">View club</a></div>
+            </div>
+        </div>
+    </div>
+</div>
+</section>
+</html>

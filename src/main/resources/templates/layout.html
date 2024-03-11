@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://thymelead.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+    <meta charset="UTF-8">
+    <link th:href="@{/css/styles.css}" rel="stylesheet">
+    <title layout:title-pattern="$CONTENT_TITLE - $LAYOUT_TITLE">SpringRunner</title>
+</head>
+<!-- Responsive navbar-->
+<nav class="navbar navbar-expand-lg navbar-dark bg-color bg-opacity-50">
+    <div class="container px-5">
+        <a class="navbar-brand" href="/clubs">SpringRunner</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                <li class="nav-item"><a class="nav-link active" aria-current="page" href="#!">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="#!">Discover</a></li>
+                <li class="nav-item"><a class="nav-link" href="/clubs/new">Create</a></li>
+                <li class="nav-item"><a class="nav-link" href="#!">About</a></li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" id="navbarDropDownBlog" href="#" role="button">Welcome</a>
+                    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropDownBlog">
+                        <li> <a class="dropdown-item" href="#">Register></a></li>
+                        <li> <a class="dropdown-item" href="#">Login</a></li>
+                        <li> <a class="dropdown-item" href="#">Logout</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<!-- PAGE CONTENT -->
+<section>
+    <!-- Heading Row-->
+    <div class="row gx-4 gx-lg-5 align-items-center my-5">
+        <div class="col-lg-7"><img class="img-fluid rounded mb-4 mb-lg-0" src="/assets/headerImg.jpg" alt="..." /></div>
+        <div class="col-lg-5">
+            <h1 class="font-weight-light">Welcome to Spring Runner!</h1>
+            <p>Find events near you, and join clubs with amazing people sharing your interests</p>
+            <a class="btn btn-primary" href="#!">Discover Nearby Activities</a>
+        </div>
+    </div>
+    <!-- Call to Action-->
+    <div class="card text-white bg-yellow my-5 py-4 text-center">
+        <div class="card-body"><p class="text-white m-0">Search the available clubs & events, join them, and share some awesome time with like-minded people! 'You can also organize events or create clubs'</p></div>
+    </div>
+</section>
+<body layout:fragment="body">
+</body>
+
+<!-- Footer-->
+<footer class="py-5 bg-color">
+    <div class="container px-4 px-lg-5"><p class="m-0 text-center text-white">Copyright &copy; SpringRunner 2024</p></div>
+</footer>
+
+<!-- Bootstrap core JS-->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+<!-- Core theme JS-->
+<script src="js/scripts.js"></script>
+</html>

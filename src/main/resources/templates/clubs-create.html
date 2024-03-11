@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layout}">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <meta name="description" content="" />
+  <meta name="author" content="" />
+  <title>Club Create</title>
+  <!-- Favicon-->
+  <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+  <!-- Core theme CSS (includes Bootstrap)-->
+  <link href="css/styles.css" rel="stylesheet" />
+</head>
+<section>
+  <!-- Page Content-->
+  <div layout:fragment="body" class="container px-4 px-lg-5">
+     <div class="container mb-3">
+       <form role="form" method="post" th:action="@{/clubs/new}" th:object="${club}">
+
+         <div class="form-row">
+           <div class="form-group col-md-6">
+             <label for="title">Title</label>
+             <input type="text"
+                    class="form-control"
+                    id="title"
+                    name="title"
+                    th:field="*{title}"
+                    placeholder="Club's name">
+           </div>
+
+           <div class="form-group col-md-6">
+             <label for="photoUrl">Club-Image URL</label>
+             <input type="text"
+                    class="form-control"
+                    id="photoUrl"
+                    name="photoUrl"
+                    th:field="*{photoUrl}"
+                    placeholder="Add the link to the club's image">
+           </div>
+
+         </div>
+         <div class="form-group mb-3">
+           <label for="content">Content</label>
+           <input type="text"
+                  class="form-control"
+                  id="content"
+                  name="content"
+                  th:field="*{content}"
+                  placeholder="What's your club about?">
+         </div>
+         <button type="submit" class="btn btn-primary">Create Club</button>
+       </form>
+     </div>
+  </div>
+</section>
+</html>
